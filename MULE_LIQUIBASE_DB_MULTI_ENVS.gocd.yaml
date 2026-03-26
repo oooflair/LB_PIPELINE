@@ -44,7 +44,7 @@ pipelines:
       CHANGEREQUEST_ID: CH123982828
       ROLLBACK_TAG: ''
     stages:
-      - Liquibase_DryRun:
+      - Liquibase_Preview_Validation:
           fetch_materials: true
           keep_artifacts: true
           clean_workspace: true

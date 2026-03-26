@@ -57,6 +57,9 @@ cd "$CHANGELOG_DIR" || exit 1
 echo "📄 ─────────────────────────────────────────────>> STATUS before dryrun"
 "$LIQUIBASE_BIN" --defaultsFile="$LB_PROPS" status --verbose
 
+echo "🔍 ─────────────────────────────────────────────>> VALIDATE"
+"$LIQUIBASE_BIN" --defaultsFile="$LB_PROPS" validate
+
 echo
 echo "🕵️‍♂️ ─────────────────────────────────────────────>> DRY RUN (updateSQL)"
 "$LIQUIBASE_BIN" --defaultsFile="$LB_PROPS" updateSQL

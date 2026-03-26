@@ -1,0 +1,37 @@
+services:
+
+  oracle-10:
+    image: gvenzl/oracle-xe:latest
+    platform: linux/amd64
+    container_name: oracle-10
+    ports:
+      - "15210:1521"
+    environment:
+      ORACLE_PASSWORD: Oracle123
+
+  oracle-11:
+    image: gvenzl/oracle-xe:latest
+    platform: linux/amd64
+    container_name: oracle-11
+    ports:
+      - "15211:1521"
+    environment:
+      ORACLE_PASSWORD: Oracle123
+
+  oracle-20:
+    image: gvenzl/oracle-xe:latest
+    platform: linux/amd64
+    container_name: oracle-20
+    ports:
+      - "15220:1521"
+    environment:
+      ORACLE_PASSWORD: Oracle123
+
+  oracle-21:
+    image: gvenzl/oracle-xe:latest
+    platform: linux/amd64
+    container_name: oracle-21
+    ports:
+      - "15221:1521"
+    environment:
+      ORACLE_PASSWORD: Oracle123
