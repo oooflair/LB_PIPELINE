@@ -8,17 +8,18 @@ pipelines:
     display_order: -1
 
     secure_variables:
-      UAT_10_5_20_213_MULEUSER_PASSWORD:  'AES:cdscdscdscdscdscds==='
-      UAT_10_5_20_213_TIBCOUSER_PASSWORD: 'AES:cdcdscdscdscdsc==='
-      UAT_10_5_20_213_JAVAUSER_PASSWORD:  'AES:cvdscdscdscdscs==='
-
-      UAT_10_5_129_98_MULEUSER_PASSWORD:  'AES:xxxxxxxxxxxxxxxx==='
-      UAT_10_5_129_98_TIBCOUSER_PASSWORD: 'AES:xxxxxxxxxxxxxxxx==='
-      UAT_10_5_129_98_JAVAUSER_PASSWORD:  'AES:xxxxxxxxxxxxxxxx==='
-
-      PROD_199_1_22_1_MULEUSER_PASSWORD:  'AES:rregrgreggetgeger==='
-      PROD_199_1_22_1_TIBCOUSER_PASSWORD: 'AES:fdgvfvfdvdf==='
-      PROD_199_1_22_1_JAVAUSER_PASSWORD:  'AES:vfdvfdvdfv==='
+          UAT_172_25_0_10_MULEUSER_PASSWORD: AES:9GCOFM/1uXJ/kk2iNvcJIg==:bcZU5SGJuR7me2cZIh2ZXg==
+          UAT_172_25_0_10_TIBCOUSER_PASSWORD: AES:FsRIHJQR3zfokfzhTCUciQ==:6wzwF0Zqm36Z/Hq8x8iWrIXFb+EG/uRyJbcoArEO3Ck=
+          UAT_172_25_0_10_JAVAUSER_PASSWORD: AES:0NtipUYusAc8t/Lc8DmXBg==:v8w5iQPkdROMqmEox9Otug==
+          UAT_172_25_0_11_MULEUSER_PASSWORD: AES:npDt9TtIVg0AHYtK26n1mA==:oWxpdJ4weEwqELfJqCUznQ==
+          UAT_172_25_0_11_TIBCOUSER_PASSWORD: AES:K0k5IUhzcZEa7X1F8V3VuQ==:atiOt+poytxvAujnaml7RmjbOxx2VS+HEX2qySArSLI=
+          UAT_172_25_0_11_JAVAUSER_PASSWORD: AES:g5c9PWMDWjCMNTA/6CLvnw==:11501jV/M4QwRs3mrxahsA==
+          PROD_172_25_0_20_MULEUSER_PASSWORD: AES:vVSbooQhL/lKpflNIOUVJg==:wRMtFLeJDv7wJx440Fg9olNl+wW+Q0VbsQoznJ5nRb8=
+          PROD_172_25_0_20_TIBCOUSER_PASSWORD: AES:y/vJ/u7tRCU9xQ/SX1zWrw==:B0l2CGnq0HU9y28jRO1YdwYCCc25mdvvutP70nm3wGc=
+          PROD_172_25_0_20_JAVAUSER_PASSWORD: AES:qKI3uX8LNvQeSLQSRehGzg==:+vgVe8djWy9ssCKuLGPeFcoQZ6fwdlwv4nnW5QKcN4Y=
+          PROD_172_25_0_21_MULEUSER_PASSWORD: AES:Up8sA39G8FPNdNb8c/BnvQ==:xUr7mXXbNHgGPySwLc0yQRIv7S9psjTcw8zOd7rWqww=
+          PROD_172_25_0_21_TIBCOUSER_PASSWORD: AES:/U+mkR6hYhuGlujIywjBsw==:RwY/FYueqL2/jQqgckoCMh9NTohIkmHVl/Nzvsq5QEw=
+          PROD_172_25_0_21_JAVAUSER_PASSWORD: AES:lvY24GmQrO7/mLTTtHG5rA==:+UhJvc/h1XphIBPIcjL0xLzTDSgP6+RL3gzvhUAmNYo=
 
       ARTIFACTORY_USERNAME: 'AES:ruhuerhgufvfhvfvfv==='
       ARTIFACTORY_PASSWORD: 'AES:hferuhreubvbfvfvfgv==='
@@ -35,12 +36,12 @@ pipelines:
 
     materials:
       git-liquibase-pipeline:
-        git: https://bitbucket.devops.domainame.com/scm/api/liquibase-db-operations-pipeline.git
-        username: apidevsecops-local-user
+        git: https://github.com/oooflair/LB_PIPELINE.git
+        #username: apidevsecops-local-user
+        #encrypted_password: 'AES:E67HUwEE4iCmE3xkYt6J/g==:qbgLtda3B/sPTmxXjY8vCA=='
         shallow_clone: false
         auto_update: true
         branch: master
-        encrypted_password: 'AES:E67HUwEE4iCmE3xkYt6J/g==:qbgLtda3B/sPTmxXjY8vCA=='
 
     stages:
       - Liquibase_DryRun:
