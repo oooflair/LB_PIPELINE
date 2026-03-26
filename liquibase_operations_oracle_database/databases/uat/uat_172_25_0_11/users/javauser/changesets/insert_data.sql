@@ -1,7 +1,72 @@
 -- liquibase formatted sql
 
--- changeset javauser:insert_data_1001 labels="insert-data"
--- comment: This changeset running to insert mapping data
-INSERT INTO DL_PARTNER_CONFIG (PARTNER_ID, PARTNER_CODE, PARTNER_NAME, STATUS) VALUES (9999, 'SAMPLE', 'Sample Partner', 'ACTIVE');
+-- changeset muleuser:insert_data_1002 labels="dml-insert"
+-- comment: This changeset inserts initial partner data
 
--- rollback DELETE FROM DL_PARTNER_CONFIG WHERE PARTNER_ID = 9999;
+INSERT INTO DL_PARTNER_CONFIG (
+    PARTNER_ID,
+    PARTNER_CODE,
+    PARTNER_NAME,
+    PARTNER_TYPE,
+    STATUS,
+    API_URL,
+    TIMEOUT_SECONDS,
+    RETRY_COUNT,
+    CREATED_BY
+) VALUES (
+    1001,
+    'HDFC001',
+    'HDFC Bank',
+    'BANK',
+    'ACTIVE',
+    'https://api.hdfc.example.com',
+    30,
+    3,
+    'muleuser'
+);
+
+INSERT INTO DL_PARTNER_CONFIG (
+    PARTNER_ID,
+    PARTNER_CODE,
+    PARTNER_NAME,
+    PARTNER_TYPE,
+    STATUS,
+    API_URL,
+    TIMEOUT_SECONDS,
+    RETRY_COUNT,
+    CREATED_BY
+) VALUES (
+    1002,
+    'ICICI001',
+    'ICICI Bank',
+    'BANK',
+    'ACTIVE',
+    'https://api.icici.example.com',
+    25,
+    2,
+    'muleuser'
+);
+
+INSERT INTO DL_PARTNER_CONFIG (
+    PARTNER_ID,
+    PARTNER_CODE,
+    PARTNER_NAME,
+    PARTNER_TYPE,
+    STATUS,
+    API_URL,
+    TIMEOUT_SECONDS,
+    RETRY_COUNT,
+    CREATED_BY
+) VALUES (
+    9999,
+    'TEST9999',
+    'Test Partner',
+    'NBFC',
+    'INACTIVE',
+    'https://api.test.example.com',
+    40,
+    5,
+    'muleuser'
+);
+
+-- rollback DELETE FROM DL_PARTNER_CONFIG WHERE PARTNER_ID IN (1001,1002,9999);

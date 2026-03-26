@@ -5,14 +5,14 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <!-- Pre-operations tag -->
-    <changeSet id="tag_before_operations" author="system">
-        <tagDatabase tag="PRE_OPERATIONS_javauser_TAG"/>
+    <!-- Tag database before operations -->
+    <changeSet id="tag_before_operations_saran_operations" author="system">
+        <tagDatabase tag="PRE_OPERATIONS_muleuser_TAG"/>
     </changeSet>
 
+    <include file="changesets/create_table.sql" relativeToChangelogFile="true"/>
     <include file="changesets/insert_data.sql" relativeToChangelogFile="true"/>
-    <include file="changesets/create_sp.sql" relativeToChangelogFile="true"/>
-    <include file="changesets/json_data.sql" relativeToChangelogFile="true"/>
-    <include file="changesets/bulkdata/bulk_load.xml" relativeToChangelogFile="true"/>
+    <include file="changesets/update_data.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/json_update.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

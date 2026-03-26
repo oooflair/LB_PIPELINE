@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <changeSet id="bulk_data_1004" author="tibcouser" labels="bulk-load">
+    <changeSet id="bulk_data_1004" author="muleuser" labels="bulk-load">
         <loadUpdateData file="data.csv" 
                         tableName="DL_PARTNER_CONFIG" 
                         primaryKey="PARTNER_ID"
