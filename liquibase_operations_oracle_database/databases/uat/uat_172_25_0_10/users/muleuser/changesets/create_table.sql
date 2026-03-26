@@ -1,4 +1,4 @@
--- liquibase formatted sql
+-- liquibase formted sql
 
 -- changeset muleuser:create_table_1001 labels="ddl-create"
 -- comment: This changeset creates DL_PARTNER_CONFIG table
