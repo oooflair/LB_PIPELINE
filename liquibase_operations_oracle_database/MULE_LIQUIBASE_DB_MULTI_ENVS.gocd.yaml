@@ -21,8 +21,8 @@ pipelines:
           PROD_172_25_0_21_TIBCOUSER_PASSWORD: AES:/U+mkR6hYhuGlujIywjBsw==:RwY/FYueqL2/jQqgckoCMh9NTohIkmHVl/Nzvsq5QEw=
           PROD_172_25_0_21_JAVAUSER_PASSWORD: AES:lvY24GmQrO7/mLTTtHG5rA==:+UhJvc/h1XphIBPIcjL0xLzTDSgP6+RL3gzvhUAmNYo=
 
-      ARTIFACTORY_USERNAME: 'AES:ruhuerhgufvfhvfvfv==='
-      ARTIFACTORY_PASSWORD: 'AES:hferuhreubvbfvfvfgv==='
+      ARTIFACTORY_USERNAME: AES:lvY24GmQrO7/mLTTtHG5rA==:+UhJvc/h1XphIBPIcjL0xLzTDSgP6+RL3gzvhUAmNYo=
+      ARTIFACTORY_PASSWORD: AES:lvY24GmQrO7/mLTTtHG5rA==:+UhJvc/h1XphIBPIcjL0xLzTDSgP6+RL3gzvhUAmNYo=
 
     parameters:
       # NOTE: This pipeline is intentionally designed to run against ONE database
