@@ -35,7 +35,7 @@ pipelines:
         git: https://github.com/oooflair/LB_PIPELINE.git
         shallow_clone: false
         auto_update: true
-        branch: master
+        branch: main
     parameters:
       ENVIRONMENT: UAT
       DATABASE_URL: jdbc:oracle:thin:@//10.5.20.213:1521/ORCLPDB1
