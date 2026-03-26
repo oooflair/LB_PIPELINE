@@ -1,0 +1,81 @@
+format_version: 10
+
+pipelines:
+  MULE_LIQUIBASE_DB_MULTI_ENVS:
+    group: mule-rtf-automation-pipeline-ops-prod
+    label_template: '${COUNT}'
+    lock_behavior: none
+    display_order: -1
+
+    secure_variables:
+      UAT_10_5_20_213_MULEUSER_PASSWORD:  'AES:cdscdscdscdscdscds==='
+      UAT_10_5_20_213_TIBCOUSER_PASSWORD: 'AES:cdcdscdscdscdsc==='
+      UAT_10_5_20_213_JAVAUSER_PASSWORD:  'AES:cvdscdscdscdscs==='
+
+      UAT_10_5_129_98_MULEUSER_PASSWORD:  'AES:xxxxxxxxxxxxxxxx==='
+      UAT_10_5_129_98_TIBCOUSER_PASSWORD: 'AES:xxxxxxxxxxxxxxxx==='
+      UAT_10_5_129_98_JAVAUSER_PASSWORD:  'AES:xxxxxxxxxxxxxxxx==='
+
+      PROD_199_1_22_1_MULEUSER_PASSWORD:  'AES:rregrgreggetgeger==='
+      PROD_199_1_22_1_TIBCOUSER_PASSWORD: 'AES:fdgvfvfdvdf==='
+      PROD_199_1_22_1_JAVAUSER_PASSWORD:  'AES:vfdvfdvdfv==='
+
+      ARTIFACTORY_USERNAME: 'AES:ruhuerhgufvfhvfvfv==='
+      ARTIFACTORY_PASSWORD: 'AES:hferuhreubvbfvfvfgv==='
+
+    parameters:
+      # NOTE: This pipeline is intentionally designed to run against ONE database
+      # and ONE database user at a time for explicit audit control.
+      ENVIRONMENT: UAT
+      DATABASE_URL: jdbc:oracle:thin:@//10.5.20.213:1521/ORCLPDB1
+      DB_USERNAME: muleuser
+      OPERATION: update
+      CHANGEREQUEST_ID: CH123982828
+      ROLLBACK_TAG: ''
+
+    materials:
+      git-liquibase-pipeline:
+        git: https://bitbucket.devops.domainame.com/scm/api/liquibase-db-operations-pipeline.git
+        username: apidevsecops-local-user
+        shallow_clone: false
+        auto_update: true
+        branch: master
+        encrypted_password: 'AES:E67HUwEE4iCmE3xkYt6J/g==:qbgLtda3B/sPTmxXjY8vCA=='
+
+    stages:
+      - Liquibase_DryRun:
+          fetch_materials: true
+          keep_artifacts: true
+          clean_workspace: true
+          approval:
+            type: success
+          jobs:
+            Inspect_SQL:
+              timeout: 0
+              elastic_profile_id: mulesoftrtfuat_dind
+              tasks:
+                - exec:
+                    working_directory: liquibase_operations_oracle_database/liquibase_scripts
+                    command: sh
+                    arguments:
+                      - ./run-liquibase.sh
+                      - dryrun
+
+      - Liquibase_Execute:
+          fetch_materials: true
+          keep_artifacts: true
+          clean_workspace: true
+          approval:
+            type: manual
+            allow_only_on_success: true
+          jobs:
+            Deploy_Changes:
+              timeout: 0
+              elastic_profile_id: mulesoftrtfuat_dind
+              tasks:
+                - exec:
+                    working_directory: liquibase_operations_oracle_database/liquibase_scripts
+                    command: sh
+                    arguments:
+                      - ./run-liquibase.sh
+                      - execute
