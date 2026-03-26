@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Pre-operations tag -->
+    <changeSet id="tag_before_operations" author="system">
+        <tagDatabase tag="PRE_OPERATIONS_javauser_TAG"/>
+    </changeSet>
+
+    <include file="changesets/insert_data.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/create_sp.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/json_data.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/bulkdata/bulk_load.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="bulk_data_1004" author="javauser" labels="bulk-load">
+        <loadUpdateData file="data.csv" 
+                        tableName="DL_PARTNER_CONFIG" 
+                        primaryKey="PARTNER_ID"
+                        relativeToChangelogFile="true">
+            <column name="PARTNER_ID" type="NUMERIC"/>
+            <column name="PARTNER_CODE" type="STRING"/>
+            <column name="PARTNER_NAME" type="STRING"/>
+            <column name="STATUS" type="STRING"/>
+        </loadUpdateData>
+        
+        <rollback>
+            <sql>DELETE FROM DL_PARTNER_CONFIG WHERE PARTNER_ID IN (8881, 8882, 8883);</sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

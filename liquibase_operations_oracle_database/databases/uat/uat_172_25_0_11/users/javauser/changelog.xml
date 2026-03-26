@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!--
+    ═══════════════════════════════════════════════════════════════════════════
+    DIGITAL LENDING — UAT DB2 (172.25.0.11) — javauser changelog
+    Includes: DBA-level changesets (schema creation, stored procedures, SP backup)
+    NOTE: javauser is the DBA schema-owner account — requires DDL and
+          DBMS_METADATA privileges. Developer users (muleuser/tibcouser)
+          do NOT run these changesets.
+    ═══════════════════════════════════════════════════════════════════════════
+    -->
+
+    <!-- Pre-operations tag — rollback anchor point -->
+    <changeSet id="tag_before_operations_javauser_uat_172_25_0_11" author="system">
+        <tagDatabase tag="PRE_OPERATIONS_javauser_uat_172_25_0_11_TAG"/>
+    </changeSet>
+
+    <include file="changesets/001_schema_backup_tables.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/005_create_procedures.sql"    relativeToChangelogFile="true"/>
+    <include file="changesets/006_sp_backup_update.sql"     relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

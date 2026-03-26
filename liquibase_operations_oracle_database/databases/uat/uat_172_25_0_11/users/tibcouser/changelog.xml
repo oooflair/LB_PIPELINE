@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!--
+    ═══════════════════════════════════════════════════════════════════════════
+    DIGITAL LENDING — UAT DB2 (172.25.0.11) — tibcouser changelog
+    Includes: developer-level changesets (data inserts, updates, JSON upserts)
+    ═══════════════════════════════════════════════════════════════════════════
+    -->
+
+    <!-- Pre-operations tag — rollback anchor point -->
+    <changeSet id="tag_before_operations_tibcouser_uat_172_25_0_11" author="system">
+        <tagDatabase tag="PRE_OPERATIONS_tibcouser_uat_172_25_0_11_TAG"/>
+    </changeSet>
+
+    <include file="changesets/002_bulk_data_insert.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/003_backup_and_update.sql" relativeToChangelogFile="true"/>
+    <include file="changesets/004_json_config_upsert.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

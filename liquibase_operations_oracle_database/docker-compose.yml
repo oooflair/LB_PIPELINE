@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  uat_db1:
+    image: sha256:c2682a4216b0fe65537912c4a049c7e5c15a85bb7c94bb8137d5f2d2eef60603
+    platform: linux/amd64
+    container_name: oracle_uat_1
+    environment:
+      - ORACLE_PASSWORD=SysPassword1
+      - ORACLE_PWD=SysPassword1 # Some Oracle images use this
+    networks:
+      lb_test_net:
+        ipv4_address: 172.25.0.10
+
+  uat_db2:
+    image: sha256:c2682a4216b0fe65537912c4a049c7e5c15a85bb7c94bb8137d5f2d2eef60603
+    platform: linux/amd64
+    container_name: oracle_uat_2
+    environment:
+      - ORACLE_PASSWORD=SysPassword1
+      - ORACLE_PWD=SysPassword1
+    networks:
+      lb_test_net:
+        ipv4_address: 172.25.0.11
+
+  prod_db1:
+    image: sha256:c2682a4216b0fe65537912c4a049c7e5c15a85bb7c94bb8137d5f2d2eef60603
+    platform: linux/amd64
+    container_name: oracle_prod_1
+    environment:
+      - ORACLE_PASSWORD=SysPassword1
+      - ORACLE_PWD=SysPassword1
+    networks:
+      lb_test_net:
+        ipv4_address: 172.25.0.20
+
+  prod_db2:
+    image: sha256:c2682a4216b0fe65537912c4a049c7e5c15a85bb7c94bb8137d5f2d2eef60603
+    platform: linux/amd64
+    container_name: oracle_prod_2
+    environment:
+      - ORACLE_PASSWORD=SysPassword1
+      - ORACLE_PWD=SysPassword1
+    networks:
+      lb_test_net:
+        ipv4_address: 172.25.0.21
+
+networks:
+  lb_test_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
+          gateway: 172.25.0.1
