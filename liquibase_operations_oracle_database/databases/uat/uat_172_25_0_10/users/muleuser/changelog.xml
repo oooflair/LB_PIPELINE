@@ -15,4 +15,9 @@
     <include file="changesets/update_data.sql" relativeToChangelogFile="true"/>
     <include file="changesets/json_update.sql" relativeToChangelogFile="true"/>
 
+<changeSet id="tag_before_operations_insert_data_2" author="system">
+        <tagDatabase tag="PRE_OPERATIONS_insert_data_2_TAG"/>
+    </changeSet>
+ <include file="changesets/insert_data_2.sql" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
