@@ -48,7 +48,7 @@ pipelines:
           jobs:
             Inspect_SQL:
               timeout: 0
-              elastic_profile_id: mulesoftrtfuat_dind
+              #elastic_profile_id: mulesoftrtfuat_dind
               tasks:
                 - exec:
                     working_directory: liquibase_operations_oracle_database/liquibase_scripts
@@ -67,7 +67,7 @@ pipelines:
           jobs:
             Deploy_Changes:
               timeout: 0
-              elastic_profile_id: mulesoftrtfuat_dind
+              #elastic_profile_id: mulesoftrtfuat_dind
               tasks:
                 - exec:
                     working_directory: liquibase_operations_oracle_database/liquibase_scripts
