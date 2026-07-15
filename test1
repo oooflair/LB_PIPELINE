@@ -1,0 +1,72 @@
+# Engineering Observability Copilot - Configuration
+# This file is for local development only. In production, use environment variables.
+
+# ============================================
+# Server Configuration
+# ============================================
+server:
+  host: "0.0.0.0"
+  port: 8001
+
+# ============================================
+# MCP Server Configuration  
+# ============================================
+mcp_server:
+  host: "0.0.0.0"
+  port: 8000
+
+# ============================================
+# AI/LLM Configuration
+# ============================================
+llm:
+  api_url: "https://llm-api.iservebetter.fulldomain.com/qwen-coder-30b-a3b-instruct-entauth/v1/chat/completions"
+  model: "/app/models/Qwen3-Coder-30B-A3B-Instruct"
+  temperature: 0.1
+  max_tokens: 1000
+
+# Token API (for getting access token)
+token:
+  api_url: "https://app.auth.fulldomain.com/api/session-management/v1/token"
+  client_id: "clientid"
+  client_secret: "secret"
+  scope: "scopes"
+
+# ============================================
+# Organization/Environment URLs
+# ============================================
+organizations:
+  mule:
+    name: "MULE-UAT"
+    prometheus_url: "https://prometheus.mulesoftrtf-nonprod.fulldomain.com"
+    jaeger_url: "https://pt-jaeger-2-ui.obs.shortdomain.com/jaeger"
+    elasticsearch_url: "https://dcawsmonitnonprodelasticcoord0.dev-logging.devops.shortdomain.com:9200"
+    elasticsearch_index: "elk-mulesoftrtf-uat*"
+    elk_mule_auth: "token=="
+
+  java:
+    name: "JAVA-UAT"
+    prometheus_url: "https://prometheus.uat-apifactoryjava.fulldomain.com"
+    jaeger_url: "https://tracing.uat-apifa  ctoryjava.fulldomain.com"
+    elasticsearch_url: "https://dcawsmonitnonprodelasticcoord0.dev-logging.devops.shortdomain.com:9200"
+    elasticsearch_index: "apifactoryjavauat*"
+    elk_java_auth: "token"
+
+# ============================================
+# MCP Server
+# ============================================
+mcp:
+  server_url: "http://localhost:8000"
+
+# ============================================
+# Thresholds
+# ============================================
+thresholds:
+  cpu:
+    warning: 50
+    critical: 80
+  error_rate:
+    warning: 2
+    critical: 5
+  latency:
+    warning: 500
+    critical: 1000
