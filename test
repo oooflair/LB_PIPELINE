@@ -1,1 +1,499 @@
 
+{
+  "_index": "elk-mulesoftrtf-uat-001916",
+  "_id": "LU0eZJ8BbU4hHYaKeX8t",
+  "_version": 1,
+  "_score": 0,
+  "_source": {
+    "container": {
+      "image": {
+        "name": "artifactory.domain.com/docker-rtf-runtime-remote/mulesoft/poseidon-runtime-4.9.2:6-java17"
+      },
+      "runtime": "containerd",
+      "id": "550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db"
+    },
+    "cloud": {
+      "availability_zone": "ap-south-1a",
+      "image": {
+        "id": "ami-01ae0cd7030a76e46"
+      },
+      "instance": {
+        "id": "i-04bf93eb08aaf5390"
+      },
+      "provider": "aws",
+      "machine": {
+        "type": "m6a.4xlarge"
+      },
+      "service": {
+        "name": "EC2"
+      },
+      "region": "ap-south-1",
+      "account": {
+        "id": "947692357927"
+      }
+    },
+    "input": {},
+    "kubernetes": {
+      "container": {
+        "name": "app"
+      },
+      "node": {
+        "name": "ip-ip.ap-south-1.compute.internal"
+      },
+      "pod": {
+        "ip": "100.64.40.61",
+        "name": "job-recruitment-proc-8fdfb8586-rvz4s"
+      },
+      "namespace": "rtf-uat-mz-app-root",
+      "replicaset": {},
+      "labels": {
+        "rtf_mulesoft_com/generation": "f70870bcb83d03a030974169863ec591",
+        "app": "job-recruitment-proc",
+        "environment": "4a1e8142-bde4-45da-baba-e6d236c835d8",
+        "rtf_mulesoft_com/disableAmLogForwarding": "true",
+        "am-org-id": "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058",
+        "root-org-id": "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058",
+        "organization": "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058",
+        "name": "job-recruitment-proc",
+        "pod-template-hash": "8fdfb8586",
+        "type": "MuleApplication",
+        "rtf_mulesoft_com/id": "5d574ce5-50d3-4cdc-bd87-5620e51f3dd2"
+      }
+    },
+    "agent": {
+      "version": "8.17.0"
+    },
+    "@timestamp": "2026-07-15T04:52:33.068Z",
+    "ecs": {},
+    "loginfo": {
+      "file": {
+        "path": "/var/log/containers/job-recruitment-proc-8fdfb8586-rvz4s_rtf-uat-mz-app-root_app-550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db.log"
+      },
+      "offset": 1467462
+    },
+    "host": {
+      "hostname": "filebeat-filebeat-x6vdh",
+      "os": {
+        "kernel": "6.12.90-120.164.amzn2023.x86_64",
+        "codename": "noble",
+        "name": "Ubuntu",
+        "type": "linux",
+        "family": "debian",
+        "version": "24.04.1 LTS (Noble Numbat)",
+        "platform": "ubuntu"
+      },
+      "containerized": true,
+      "ip": [
+        "100.64.40.49",
+        "fe80::dcfa:55ff:fe07:49c2"
+      ],
+      "name": "filebeat-filebeat-x6vdh",
+      "mac": [
+        "DE-FA-55-07-49-C2"
+      ],
+      "architecture": "x86_64"
+    },
+    "log_exist": false,
+    "mule_idfclogger": {
+      "applicationVersion": "1.0.0",
+      "locationInfo": {
+        "lineInFile": "389",
+        "component": "idfclogger:before-request",
+        "fileName": "candidate-cv-screener.xml",
+        "rootContainer": "initiate-cv-screener-flow"
+      },
+      "resourceName": "N/A",
+      "message": "Before EntAuth generate token",
+      "priority": "INFO",
+      "transactionId": null,
+      "threadName": "[MuleRuntime].uber.2540: [job-recruitment-proc].camndidate-cv-screenerFlow.CPU_LITE @4fcd28a0",
+      "elapsed": 130,
+      "environment": "uat",
+      "payload": "Before EntAuth generate token",
+      "applicationLayer": "PROC",
+      "domain": "Phenom",
+      "correlationId": "m53nq328gpriiqkl3f620dgvjp",
+      "sourceName": "EDMS",
+      "tracePoint": "BEFORE_REQUEST",
+      "category": "com.domain.idfclogger",
+      "applicationName": "job-recruitment-proc",
+      "timestamp": "2026-07-15T04:52:33.068Z"
+    }
+  },
+  "fields": {
+    "agent.version.keyword": [
+      "8.17.0"
+    ],
+    "cloud.instance.id.keyword": [
+      "i-04bf93eb08aaf5390"
+    ],
+    "host.name.keyword": [
+      "filebeat-filebeat-x6vdh"
+    ],
+    "mule_idfclogger.message.keyword": [
+      "Before EntAuth generate token"
+    ],
+    "mule_idfclogger.locationInfo.component": [
+      "idfclogger:before-request"
+    ],
+    "host.hostname": [
+      "filebeat-filebeat-x6vdh"
+    ],
+    "host.mac": [
+      "DE-FA-55-07-49-C2"
+    ],
+    "kubernetes.labels.root-org-id.keyword": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "container.id": [
+      "550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db"
+    ],
+    "mule_idfclogger.tracePoint.keyword": [
+      "BEFORE_REQUEST"
+    ],
+    "kubernetes.labels.environment.keyword": [
+      "4a1e8142-bde4-45da-baba-e6d236c835d8"
+    ],
+    "container.image.name": [
+      "artifactory.domain.com/docker-rtf-runtime-remote/mulesoft/poseidon-runtime-4.9.2:6-java17"
+    ],
+    "kubernetes.container.name.keyword": [
+      "app"
+    ],
+    "host.os.version": [
+      "24.04.1 LTS (Noble Numbat)"
+    ],
+    "kubernetes.labels.app": [
+      "job-recruitment-proc"
+    ],
+    "kubernetes.pod.name.keyword": [
+      "job-recruitment-proc-8fdfb8586-rvz4s"
+    ],
+    "mule_idfclogger.category.keyword": [
+      "com.domain.idfclogger"
+    ],
+    "cloud.account.id.keyword": [
+      "947692357927"
+    ],
+    "mule_idfclogger.applicationName": [
+      "job-recruitment-proc"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/generation.keyword": [
+      "f70870bcb83d03a030974169863ec591"
+    ],
+    "mule_idfclogger.category": [
+      "com.domain.idfclogger"
+    ],
+    "cloud.region": [
+      "ap-south-1"
+    ],
+    "host.os.type": [
+      "linux"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/disableAmLogForwarding": [
+      "true"
+    ],
+    "mule_idfclogger.message": [
+      "Before EntAuth generate token"
+    ],
+    "mule_idfclogger.timestamp": [
+      "2026-07-15T04:52:33.068Z"
+    ],
+    "host.architecture": [
+      "x86_64"
+    ],
+    "cloud.machine.type": [
+      "m6a.4xlarge"
+    ],
+    "cloud.provider": [
+      "aws"
+    ],
+    "kubernetes.labels.root-org-id": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/id.keyword": [
+      "5d574ce5-50d3-4cdc-bd87-5620e51f3dd2"
+    ],
+    "loginfo.file.path": [
+      "/var/log/containers/job-recruitment-proc-8fdfb8586-rvz4s_rtf-uat-mz-app-root_app-550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db.log"
+    ],
+    "host.containerized": [
+      true
+    ],
+    "mule_idfclogger.environment.keyword": [
+      "uat"
+    ],
+    "log_exist": [
+      false
+    ],
+    "mule_idfclogger.resourceName.keyword": [
+      "N/A"
+    ],
+    "mule_idfclogger.locationInfo.rootContainer.keyword": [
+      "initiate-cv-screener-flow"
+    ],
+    "mule_idfclogger.correlationId": [
+      "m53nq328gpriiqkl3f620dgvjp"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/disableAmLogForwarding.keyword": [
+      "true"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/generation": [
+      "f70870bcb83d03a030974169863ec591"
+    ],
+    "mule_idfclogger.locationInfo.lineInFile": [
+      "389"
+    ],
+    "cloud.instance.id": [
+      "i-04bf93eb08aaf5390"
+    ],
+    "host.ip": [
+      "100.64.40.49",
+      "fe80::dcfa:55ff:fe07:49c2"
+    ],
+    "mule_idfclogger.applicationLayer": [
+      "PROC"
+    ],
+    "mule_idfclogger.payload.keyword": [
+      "Before EntAuth generate token"
+    ],
+    "host.os.kernel.keyword": [
+      "6.12.90-120.164.amzn2023.x86_64"
+    ],
+    "kubernetes.labels.app.keyword": [
+      "job-recruitment-proc"
+    ],
+    "mule_idfclogger.sourceName.keyword": [
+      "EDMS"
+    ],
+    "container.image.name.keyword": [
+      "artifactory.domain.com/docker-rtf-runtime-remote/mulesoft/poseidon-runtime-4.9.2:6-java17"
+    ],
+    "kubernetes.pod.ip": [
+      "100.64.40.61"
+    ],
+    "mule_idfclogger.elapsed": [
+      130
+    ],
+    "cloud.region.keyword": [
+      "ap-south-1"
+    ],
+    "kubernetes.container.name": [
+      "app"
+    ],
+    "mule_idfclogger.correlationId.keyword": [
+      "m53nq328gpriiqkl3f620dgvjp"
+    ],
+    "host.os.codename": [
+      "noble"
+    ],
+    "mule_idfclogger.applicationLayer.keyword": [
+      "PROC"
+    ],
+    "mule_idfclogger.sourceName": [
+      "EDMS"
+    ],
+    "cloud.availability_zone.keyword": [
+      "ap-south-1a"
+    ],
+    "mule_idfclogger.domain.keyword": [
+      "Phenom"
+    ],
+    "cloud.image.id": [
+      "ami-01ae0cd7030a76e46"
+    ],
+    "kubernetes.labels.environment": [
+      "4a1e8142-bde4-45da-baba-e6d236c835d8"
+    ],
+    "@timestamp": [
+      "2026-07-15T04:52:33.068Z"
+    ],
+    "cloud.account.id": [
+      "947692357927"
+    ],
+    "container.runtime.keyword": [
+      "containerd"
+    ],
+    "host.os.platform": [
+      "ubuntu"
+    ],
+    "mule_idfclogger.threadName": [
+      "[MuleRuntime].uber.2540: [job-recruitment-proc].camndidate-cv-screenerFlow.CPU_LITE @4fcd28a0"
+    ],
+    "host.architecture.keyword": [
+      "x86_64"
+    ],
+    "kubernetes.labels.organization": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "kubernetes.labels.type": [
+      "MuleApplication"
+    ],
+    "mule_idfclogger.locationInfo.lineInFile.keyword": [
+      "389"
+    ],
+    "kubernetes.labels.organization.keyword": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "cloud.availability_zone": [
+      "ap-south-1a"
+    ],
+    "kubernetes.labels.pod-template-hash": [
+      "8fdfb8586"
+    ],
+    "host.ip.keyword": [
+      "100.64.40.49",
+      "fe80::dcfa:55ff:fe07:49c2"
+    ],
+    "kubernetes.namespace": [
+      "rtf-uat-mz-app-root"
+    ],
+    "host.os.name": [
+      "Ubuntu"
+    ],
+    "mule_idfclogger.applicationVersion": [
+      "1.0.0"
+    ],
+    "host.name": [
+      "filebeat-filebeat-x6vdh"
+    ],
+    "host.os.version.keyword": [
+      "24.04.1 LTS (Noble Numbat)"
+    ],
+    "cloud.service.name.keyword": [
+      "EC2"
+    ],
+    "mule_idfclogger.tracePoint": [
+      "BEFORE_REQUEST"
+    ],
+    "mule_idfclogger.environment": [
+      "uat"
+    ],
+    "mule_idfclogger.applicationVersion.keyword": [
+      "1.0.0"
+    ],
+    "container.runtime": [
+      "containerd"
+    ],
+    "cloud.service.name": [
+      "EC2"
+    ],
+    "host.hostname.keyword": [
+      "filebeat-filebeat-x6vdh"
+    ],
+    "mule_idfclogger.resourceName": [
+      "N/A"
+    ],
+    "agent.version": [
+      "8.17.0"
+    ],
+    "kubernetes.namespace.keyword": [
+      "rtf-uat-mz-app-root"
+    ],
+    "mule_idfclogger.locationInfo.fileName": [
+      "candidate-cv-screener.xml"
+    ],
+    "host.os.family": [
+      "debian"
+    ],
+    "loginfo.offset": [
+      1467462
+    ],
+    "cloud.machine.type.keyword": [
+      "m6a.4xlarge"
+    ],
+    "kubernetes.node.name": [
+      "ip-ip.ap-south-1.compute.internal"
+    ],
+    "mule_idfclogger.priority": [
+      "INFO"
+    ],
+    "mule_idfclogger.applicationName.keyword": [
+      "job-recruitment-proc"
+    ],
+    "mule_idfclogger.payload": [
+      "Before EntAuth generate token"
+    ],
+    "kubernetes.labels.am-org-id": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "kubernetes.node.name.keyword": [
+      "ip-ip.ap-south-1.compute.internal"
+    ],
+    "mule_idfclogger.threadName.keyword": [
+      "[MuleRuntime].uber.2540: [job-recruitment-proc].camndidate-cv-screenerFlow.CPU_LITE @4fcd28a0"
+    ],
+    "kubernetes.labels.name": [
+      "job-recruitment-proc"
+    ],
+    "mule_idfclogger.locationInfo.fileName.keyword": [
+      "candidate-cv-screener.xml"
+    ],
+    "host.os.kernel": [
+      "6.12.90-120.164.amzn2023.x86_64"
+    ],
+    "host.os.name.keyword": [
+      "Ubuntu"
+    ],
+    "kubernetes.pod.name": [
+      "job-recruitment-proc-8fdfb8586-rvz4s"
+    ],
+    "host.os.codename.keyword": [
+      "noble"
+    ],
+    "mule_idfclogger.locationInfo.component.keyword": [
+      "idfclogger:before-request"
+    ],
+    "cloud.image.id.keyword": [
+      "ami-01ae0cd7030a76e46"
+    ],
+    "host.mac.keyword": [
+      "DE-FA-55-07-49-C2"
+    ],
+    "kubernetes.labels.pod-template-hash.keyword": [
+      "8fdfb8586"
+    ],
+    "kubernetes.labels.type.keyword": [
+      "MuleApplication"
+    ],
+    "mule_idfclogger.domain": [
+      "Phenom"
+    ],
+    "mule_idfclogger.priority.keyword": [
+      "INFO"
+    ],
+    "kubernetes.labels.name.keyword": [
+      "job-recruitment-proc"
+    ],
+    "mule_idfclogger.locationInfo.rootContainer": [
+      "initiate-cv-screener-flow"
+    ],
+    "host.os.family.keyword": [
+      "debian"
+    ],
+    "loginfo.file.path.keyword": [
+      "/var/log/containers/job-recruitment-proc-8fdfb8586-rvz4s_rtf-uat-mz-app-root_app-550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db.log"
+    ],
+    "host.os.type.keyword": [
+      "linux"
+    ],
+    "host.os.platform.keyword": [
+      "ubuntu"
+    ],
+    "cloud.provider.keyword": [
+      "aws"
+    ],
+    "container.id.keyword": [
+      "550172b6bb590a2d68875e22ed28e4dc86116cf04d87771504c3b8140c90e3db"
+    ],
+    "kubernetes.labels.am-org-id.keyword": [
+      "0ac2f9d1-5bad-4ff7-9d4e-17d8516e4058"
+    ],
+    "kubernetes.pod.ip.keyword": [
+      "100.64.40.61"
+    ],
+    "kubernetes.labels.rtf_mulesoft_com/id": [
+      "5d574ce5-50d3-4cdc-bd87-5620e51f3dd2"
+    ]
+  }
+}
